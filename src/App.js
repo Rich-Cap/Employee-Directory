@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import Header from './components/Header/';
 import Wrapper from './components/Wrapper/';
-import EmployeeCard from './components/EmployeeCard/'
+import EmployeeCard from './components/EmployeeCard/';
+import Search from './components/Search/';
+import Dropdown from './components/Dropdown/';
 import Employees from './employees.json';
 
 function App() {
@@ -12,6 +14,8 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <Search />
+      <Dropdown />
       <Wrapper>
       {Employees.map(employee => (
           <EmployeeCard
