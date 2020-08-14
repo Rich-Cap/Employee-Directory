@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header/';
 import Wrapper from './components/Wrapper/';
 import EmployeeCard from './components/EmployeeCard/';
@@ -7,9 +7,11 @@ import Dropdown from './components/Dropdown/';
 import Employees from './employees.json';
 
 function App() {
-  const [employees, setEmployees] = useState({
-    Employees
-  });
+  const [employees, setEmployees] = useState(Employees);
+
+  useEffect(() => {
+    console.log("render")
+  }, []);
 
   return (
     <div className="App">
@@ -17,7 +19,7 @@ function App() {
       <Search />
       <Dropdown />
       <Wrapper>
-      {Employees.map(employee => (
+      {employees.map(employee => (
           <EmployeeCard
             key={employee.id}
             id={employee.id}
